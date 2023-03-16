@@ -1,0 +1,46 @@
+.carta {
+  background-color: rgba(31, 209, 225, 0.32);
+  width: fit-content;
+  border-radius: 15px;
+  border: 1px solid rgb(59, 14, 174);
+}
+
+.contenedor {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.image {
+  display: relative;
+  border-radius: 60em;
+  padding: 1em;
+}
+
+.boton {
+  position: absolute;
+  right: 5px;
+  background-color: rgb(171, 17, 122);
+  color: aliceblue;
+  outline: 1px solid black;
+  outline-offset: 0.5px;
+  border-radius: 18px;
+}
+
+.name {
+  position: absolute;
+  bottom: 0.5px;
+  left: 20px;
+  background-color: rgb(202, 133, 23);
+  opacity: 70%;
+  border-radius: 6px;
+}
+
+.descripsion {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  color: rgb(219, 241, 25);
+  font-family: "Nerko One";
+  font-size: 20px;
+}

@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&family=Tilt+Prism&display=swap");
+
+@font-face {
+  font-family: RickandMorty;
+  src: url(../../font/get_schwifty.ttf);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 85% 15%;
+  height: 50px;
+  align-items: center;
+  background-color: rgba(32, 0, 54, 0.811);
+}
+
+.containerRutas {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-left: 200px;
+}
+.containerRutas a {
+  text-decoration: none;
+  font-family: Rampart One;
+  font-weight: 700;
+  font-size: 25px;
+  color: rgb(251, 255, 3);
+  /* -webkit-text-stroke: 0.01px rgb(251, 255, 3); */
+}
+
+/* .containerSearch {
+  position: relative;
+  right: 5px;
+} */
+
+.containerSearch {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.searchBar {
+  display: flex;
+  background-color: white;
+  padding: 9px 22px 9px 26px;
+  border-radius: 30px;
+  border: 2px solid #cad3dc;
+}
+
+.inputSearchBar {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  padding-left: 24px;
+  background-image: url(../../../public/img/lupa.png);
+  width: 0px;
+  background-repeat: no-repeat;
+  transition: 0.6s;
+}
+.inputSearchBar:hover {
+  outline: none;
+  width: 300px;
+}
+
+.inputSearchBar:focus {
+  outline: none;
+  width: 300px;
+}
+
+.button {
+  border: none;
+  background-color: rgb(146, 0, 168);
+  border-radius: 12px;
+}
+.button:hover {
+  background-color: rgb(166, 0, 191);
+}
+.button:active {
+  background-color: rgb(206, 16, 235);
+}

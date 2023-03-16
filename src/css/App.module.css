@@ -1,0 +1,16 @@
+.fondo {
+  background-image: url(../../public/img/Fondo_Rick-and-Morty.jpg);
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.logo {
+  max-width: 50rem;
+  width: 50rem;
+}
+.fondo .image {
+  width: 35%;
+}
