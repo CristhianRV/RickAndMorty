@@ -18,11 +18,10 @@ export default function SearchBar(props) {
       <div className={styles.searchBar}>
         <input
           className={styles.inputSearchBar}
-          type="number"
+          type="text"
           value={personaje}
-          placeholder="Ingresa un numero entre 1 - 826"
+          placeholder="Ingresa un personaje"
           onChange={cambioEstado}
-          min="0"
         />
         <button className={styles.button} onClick={buttonHandler}>
           🔍

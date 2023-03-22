@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Righteous&display=swap");
+
+.container {
+  display: flex;
+  gap: 45px;
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  background-color: rgba(103, 17, 164, 0.705);
+  width: 43rem;
+  border-radius: 20px;
+  box-shadow: 0 0 15px 4px #a647ff;
+}
+.container hr {
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: 0 0 10px 4px rgb(255, 255, 255);
+}
+
+.container img {
+  margin: 25px;
+  border-radius: 20px;
+  filter: drop-shadow(0 5px 20px #fff);
+}
+.container h3 {
+  color: white;
+  -webkit-text-stroke: 0.1px rgb(11, 142, 11);
+  font-family: Righteous;
+}
+.container h1 {
+  color: white;
+  -webkit-text-stroke: 0.1px rgb(11, 142, 11);
+  font-family: Permanent Marker;
+}
+.container button {
+  position: absolute;
+  right: 5px;
+  background-color: rgb(171, 17, 122);
+  color: aliceblue;
+  outline: 1px solid black;
+  outline-offset: 0.5px;
+  border-radius: 18px;
+  cursor: pointer;
+}

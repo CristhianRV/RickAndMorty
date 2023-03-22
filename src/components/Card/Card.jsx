@@ -9,7 +9,7 @@ const Card = (props) => {
   return (
     <div className={styles.carta}>
       <div className={styles.contenedor}>
-        <Link to={`/detail/${props.ident}`}>
+        <Link to={`/home/detail/${props.ident}`}>
           <img
             className={styles.image}
             src={props.image}

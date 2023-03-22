@@ -8,8 +8,30 @@
 }
 
 .logo {
-  max-width: 50rem;
-  width: 50rem;
+  /* max-width: 50rem;
+  width: 50rem; */
+  /* min-height: 20vw; */
+  margin: 3rem 0rem;
+  display: flex;
+  justify-content: center;
+}
+.logo img {
+  animation: titleAnimation infinite ease-in-out 3s;
+}
+
+@keyframes titleAnimation {
+  0% {
+    transform: scale(1) rotateZ(0deg);
+    filter: drop-shadow(0 0 0 rgba(61, 4, 0, 255)) brightness(1);
+  }
+  50% {
+    transform: scale(1.2) rotateZ(3deg);
+    filter: drop-shadow(16px 16px 20px rgb(61 255 215)) brightness(1.4);
+  }
+  100% {
+    transform: scale(1) rotateZ(0deg);
+    filter: drop-shadow(0 0 0 #005f95) brightness(1);
+  }
 }
 .fondo .image {
   width: 35%;

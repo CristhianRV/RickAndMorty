@@ -10,44 +10,63 @@ const Cartas = styled.div`
   gap: 25px;
 `;
 
-export default function Cards(props) {
-  const [data, setData] = useState([]);
-  const { characters } = props;
-
-  if (characters.length > 4) {
-    for (let i = 0; i < characters.length - 1; i++) {
-      console.log(`Valor de i: ${i}`);
-      // const newArray = [];
-      let x = 0;
-      for (
-        let y = i === 0 ? i : i + 1;
-        x < 4 && characters[y] !== "undefined";
-        y++
-      ) {
-        console.log(`Valor de Y: ${y}`);
-        x += 1;
-        i = y - 1;
-        // newArray.push(characters[y]);
-      }
-      // setData([...data, newArray]);
-    }
+const Container = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+const Buttons = styled.button`
+  height: 45px;
+  width: 40px;
+  border-radius: 30px;
+  border: none;
+  position: relative;
+  top: 160px;
+  background-color: transparent;
+  color: #03d361;
+  font-size: 35px;
+  cursor: pointer;
+  transition: 0.4s;
+  &:hover {
+    color: #06ec6d;
+    font-size: 40px;
   }
+`;
+
+export default function Cards(props) {
+  const [current, setCurrent] = useState(1);
+  const { characters } = props;
+  let paginated = Math.ceil(characters.length / 4);
+  const personajes = characters.slice((current - 1) * 4, current * 4);
+
+  const nextHandler = () => {
+    if (current === paginated) return;
+    setCurrent(+current + 1);
+  };
+
+  const prevHandler = () => {
+    if (current === 1) return;
+    setCurrent(+current - 1);
+  };
 
   return (
-    <Cartas>
-      {characters.map((objeto) => {
-        return (
-          <Card
-            key={objeto.id}
-            ident={objeto.id}
-            name={objeto.name}
-            species={objeto.species}
-            gender={objeto.gender}
-            image={objeto.image}
-            onClose={props.onClose}
-          />
-        );
-      })}
-    </Cartas>
+    <Container>
+      {characters.length > 4 && <Buttons onClick={prevHandler}>◀</Buttons>}
+      <Cartas>
+        {personajes.map((objeto) => {
+          return (
+            <Card
+              key={objeto.id}
+              ident={objeto.id}
+              name={objeto.name}
+              species={objeto.species}
+              gender={objeto.gender}
+              image={objeto.image}
+              onClose={props.onClose}
+            />
+          );
+        })}
+      </Cartas>
+      {characters.length > 4 && <Buttons onClick={nextHandler}>▶</Buttons>}
+    </Container>
   );
 }

@@ -7,7 +7,7 @@ function Nav(props) {
   return (
     <div className={styles.container}>
       <div className={styles.containerRutas}>
-        <Link to="/">
+        <Link to="/home">
           <span className={styles.link}>Home</span>
         </Link>
         <Link to="/about">
