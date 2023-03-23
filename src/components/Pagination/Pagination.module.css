@@ -1,0 +1,9 @@
+.container {
+  position: absolute;
+  top: 10rem;
+  left: 32.5rem;
+}
+.container img {
+  width: 40rem;
+  border-radius: 50rem;
+}

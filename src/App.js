@@ -7,29 +7,47 @@ import Nav from "./components/NavBar/Nav.jsx";
 import styles from "./css/App.module.css";
 import { Route, useLocation } from "react-router-dom";
 import { Home, Detail, About } from "./components/Rutas";
+import Landing from "./components/Landing/Landing";
 
 function App() {
+  const [state, setState] = useState(false);
   const [characters, setCharacters] = useState([]);
+  const [user, setUser] = useState("");
 
   const onSearch = (name) => {
+    setState(true);
     fetch(`https://rickandmortyapi.com/api/character?name=${name}`)
       .then((response) => response.json())
       .then((data) => data.results)
       .then((data) => {
-        if (characters.length === 0) setCharacters([data.at(0)]);
-        else if (characters.length >= 1) {
+        console.log(data);
+        if (characters.length === 0) {
+          setCharacters([data.at(0)]);
+          setState(false);
+        }
+        if (characters.length >= 1) {
           const newArray = characters.map((element) => element.id);
 
           for (const personaje of data) {
             if (!newArray.includes(personaje.id)) {
               setCharacters([...characters, personaje]);
+              setState(false);
               return;
             }
           }
-        } else {
-          window.alert("No hay personajes con ese ID");
         }
+      })
+      .catch(() => {
+        window.alert("No hay personajes con ese nombre");
+        setState(false);
       });
+  };
+
+  const handlerUser = (event) => {
+    setUser(event.target.value);
+  };
+  const clouseUser = () => {
+    setUser("");
   };
 
   const onClose = (ident) => {
@@ -43,7 +61,7 @@ function App() {
     <div className="App" style={{ padding: "0px" }}>
       <div className={styles.fondo}>
         <div>
-          <Nav onSearch={onSearch} />
+          {location.pathname !== "/" && <Nav onSearch={onSearch} user={user} />}
         </div>
         <div className={styles.logo}>
           <img
@@ -52,12 +70,23 @@ function App() {
             alt="logo"
           />
         </div>
-
         <div>
+          <Route
+            exact
+            path="/"
+            render={() => <Landing handlerUser={handlerUser} user={user} />}
+          />
           {location.pathname !== "/about" && (
             <Route
               path="/home"
-              render={() => <Home characters={characters} onClose={onClose} />}
+              render={() => (
+                <Home
+                  characters={characters}
+                  onClose={onClose}
+                  state={state}
+                  clouseUser={clouseUser}
+                />
+              )}
             />
           )}
           <Route path="/about" component={About} />

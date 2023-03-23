@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rampart+One&family=Tilt+Prism&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap");
 
 @font-face {
   font-family: RickandMorty;
@@ -7,10 +8,20 @@
 
 .container {
   display: grid;
+  position: relative;
   grid-template-columns: 85% 15%;
   height: 50px;
   align-items: center;
   background-color: rgba(32, 0, 54, 0.811);
+}
+
+.container h1 {
+  position: absolute;
+  left: 2rem;
+  color: rgb(173, 255, 178);
+  font-family: Delicious Handrawn;
+  font-size: 2.5rem;
+  filter: drop-shadow(6px 4px 5px #40ff01);
 }
 
 .containerRutas {

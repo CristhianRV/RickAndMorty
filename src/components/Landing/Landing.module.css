@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather+Sans:wght@600;700&display=swap");
+
+.container {
+  margin-top: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loggin span {
+  display: block;
+  color: white;
+  font-family: Bebas Neue;
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.loggin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* gap: 2rem; */
+  width: 30rem;
+  height: 15rem;
+  /* border: 3px solid rgb(2, 255, 10); */
+  border: none;
+  box-shadow: 0 0 6px 4px rgb(2, 255, 10);
+  border-radius: 20px;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 255, 0.818),
+    rgba(255, 0, 230, 0.818)
+  );
+}
+.loggin input {
+  width: 21rem;
+  height: 1.5rem;
+  padding: 0.4rem;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-family: Merriweather Sans;
+  font-weight: 700;
+  color: rgb(255, 0, 2305);
+  transition: 0.4s;
+}
+
+.loggin input:hover {
+  box-shadow: 0 0 6px 2px rgb(255, 0, 230);
+}
+.loggin input:focus {
+  box-shadow: 0 0 6px 2px rgb(255, 0, 230);
+}
+
+.loggin button {
+  width: 22rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  background-color: rgb(0, 123, 255);
+  border: none;
+  /* box-shadow: 0 0 3px 1px rgb(255, 0, 230); */
+  color: white;
+  font-family: Merriweather Sans;
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+.loggin button:hover {
+  box-shadow: 0 0 5px 3px rgb(255, 0, 230);
+  background-color: white;
+  color: blue;
+}

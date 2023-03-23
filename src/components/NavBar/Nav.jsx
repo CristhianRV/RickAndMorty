@@ -6,6 +6,7 @@ import styles from "./Nav.module.css";
 function Nav(props) {
   return (
     <div className={styles.container}>
+      <h1>{`Hi ${props.user}`}</h1>
       <div className={styles.containerRutas}>
         <Link to="/home">
           <span className={styles.link}>Home</span>

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Righteous&display=swap");
 
 .container {
+  margin-top: 4rem;
   display: flex;
   justify-content: center;
   gap: 15rem;
