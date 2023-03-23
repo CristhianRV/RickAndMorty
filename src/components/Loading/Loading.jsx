@@ -1,6 +1,6 @@
-import style from "./Pagination.module.css";
+import style from "./Loading.module.css";
 
-const Pagination = () => {
+const Loading = () => {
   return (
     <div className={style.container}>
       <img src="img/Loading2.gif" alt="Loading" />
@@ -8,4 +8,4 @@ const Pagination = () => {
   );
 };
 
-export default Pagination;
+export default Loading;

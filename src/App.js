@@ -8,9 +8,12 @@ import styles from "./css/App.module.css";
 import { Route, useLocation } from "react-router-dom";
 import { Home, Detail, About } from "./components/Rutas";
 import Landing from "./components/Landing/Landing";
+import Modal from "./components/Modal/Modal";
 
 function App() {
   const [state, setState] = useState(false);
+  const [message, setMessage] = useState("");
+  const [modal, setModal] = useState(false);
   const [characters, setCharacters] = useState([]);
   const [user, setUser] = useState("");
 
@@ -20,7 +23,6 @@ function App() {
       .then((response) => response.json())
       .then((data) => data.results)
       .then((data) => {
-        console.log(data);
         if (characters.length === 0) {
           setCharacters([data.at(0)]);
           setState(false);
@@ -38,8 +40,9 @@ function App() {
         }
       })
       .catch(() => {
-        window.alert("No hay personajes con ese nombre");
         setState(false);
+        setMessage("No hay personajes con ese nombre");
+        setModal(true);
       });
   };
 
@@ -48,6 +51,7 @@ function App() {
   };
   const clouseUser = () => {
     setUser("");
+    setCharacters([]);
   };
 
   const onClose = (ident) => {
@@ -74,7 +78,14 @@ function App() {
           <Route
             exact
             path="/"
-            render={() => <Landing handlerUser={handlerUser} user={user} />}
+            render={() => (
+              <Landing
+                handlerUser={handlerUser}
+                user={user}
+                setModal={setModal}
+                setMessage={setMessage}
+              />
+            )}
           />
           {location.pathname !== "/about" && (
             <Route
@@ -85,6 +96,7 @@ function App() {
                   onClose={onClose}
                   state={state}
                   clouseUser={clouseUser}
+                  setModal={setModal}
                 />
               )}
             />
@@ -94,6 +106,12 @@ function App() {
             path="/home/detail/:id"
             render={({ match }) => <Detail id={match.params.id} />}
           />
+          {modal && (
+            <Route
+              path="/*"
+              render={() => <Modal setModal={setModal} message={message} />}
+            />
+          )}
         </div>
       </div>
     </div>

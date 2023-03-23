@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Poppins:ital,wght@1,600&display=swap");
+
+.container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.322);
+  min-height: 100vh;
+  min-width: 100vw;
+  top: -0px;
+}
+
+.modal {
+  background-color: rgb(0, 0, 0);
+  padding: 1rem;
+  border-radius: 15px;
+  width: 38rem;
+  position: relative;
+}
+.border {
+  /* box-shadow: 0 -12px 6px 1px red;
+  border-radius: 15px; */
+  width: 40.4rem;
+  height: 10.3rem;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.border::before {
+  content: "";
+  width: 150%;
+  height: 300%;
+  position: absolute;
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    background-image: conic-gradient(#ea00ff 20deg, transparent 120deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+    background-image: conic-gradient(#000dff 20deg, transparent 120deg);
+  }
+}
+
+.modal h1 {
+  color: rgb(0, 255, 225);
+  font-family: Poppins;
+  filter: drop-shadow(1px 1px 2px white);
+  /* font-size: 1rem; */
+}
+.modal button {
+  width: 15rem;
+  height: 2rem;
+  border-radius: 15px;
+  cursor: pointer;
+  color: blueviolet;
+  font-family: Delicious Handrawn;
+  font-weight: 700;
+  font-size: large;
+  transition: 0.4s;
+}
+
+.modal button:hover {
+  background: linear-gradient(
+    to bottom right,
+    rgb(81, 0, 255),
+    rgba(255, 0, 230)
+  );
+  color: white;
+}

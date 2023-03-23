@@ -1,6 +1,6 @@
 import style from "../../css/Home.module.css";
 import Cards from "../Cards/Cards";
-import Pagination from "../Pagination/Pagination";
+import Loading from "../Loading/Loading";
 import { Link } from "react-router-dom";
 
 export default function Home({ characters, onClose, state, clouseUser }) {
@@ -11,8 +11,8 @@ export default function Home({ characters, onClose, state, clouseUser }) {
       </Link>
       <div className={style.containerCards}>
         <Cards characters={characters} onClose={onClose} />
-        {state && <Pagination />}
       </div>
+      {state && <Loading />}
     </div>
   );
 }
