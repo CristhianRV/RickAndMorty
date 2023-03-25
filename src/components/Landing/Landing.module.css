@@ -15,6 +15,22 @@
   font-size: 2rem;
   margin-bottom: 2rem;
 }
+/* RESPONSIVE SMARPHONE */
+
+@media (max-width: 400px) {
+  .container {
+    margin-top: 10rem;
+  }
+  .loggin {
+    max-width: 20rem;
+  }
+  .loggin input {
+    max-width: 17rem;
+  }
+  .loggin button {
+    max-width: 18rem;
+  }
+}
 
 .loggin {
   display: flex;

@@ -9,10 +9,10 @@
 .container {
   display: grid;
   position: relative;
-  grid-template-columns: 85% 15%;
-  height: 50px;
+  height: 55px;
   align-items: center;
   background-color: rgba(32, 0, 54, 0.811);
+  padding: 0 0.5rem;
 }
 
 .container h1 {
@@ -24,11 +24,26 @@
   filter: drop-shadow(6px 4px 5px #40ff01);
 }
 
+.navegacion input[type="checkbox"] {
+  display: none;
+}
+.navegacion ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  transition: all 1s;
+}
+
 .containerRutas {
   display: flex;
+  /* flex-direction: row-reverse !important; */
   justify-content: center;
-  gap: 25px;
-  margin-left: 200px;
+  list-style: none;
+
+  /* gap: 25px; */
+  /* margin-left: 200px; */
 }
 .containerRutas a {
   text-decoration: none;
@@ -39,16 +54,12 @@
   /* -webkit-text-stroke: 0.01px rgb(251, 255, 3); */
 }
 
-/* .containerSearch {
-  position: relative;
-  right: 5px;
-} */
-
 .containerSearch {
   display: flex;
+  position: absolute;
+  right: 2rem;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 50px;
 }
 
 .searchBar {
@@ -89,4 +100,65 @@
 }
 .button:active {
   background-color: rgb(206, 16, 235);
+}
+
+/* DISEÑO RESPONSIVE */
+
+@media (max-width: 720px) {
+  .containerSearch {
+    position: relative;
+  }
+  .navegacion {
+    z-index: 1;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .navegacion ul {
+    position: fixed;
+    flex-direction: column;
+    /* min-height: calc(100vh - 85px); */
+    height: 25vh;
+    top: 55px;
+    right: -100vw;
+    width: 17rem;
+    border-radius: 10px;
+    padding-top: 2rem;
+    justify-content: flex-start;
+    background: linear-gradient(
+      to bottom right,
+      rgb(81, 0, 255),
+      rgba(255, 0, 230)
+    );
+  }
+  .navegacion li {
+    margin-left: 5rem;
+  }
+
+  .inputSearchBar:hover {
+    width: 150px;
+  }
+
+  .inputSearchBar:focus {
+    width: 150px;
+  }
+  .navegacion input[type="checkbox"] {
+    position: absolute;
+    top: -100px;
+  }
+  .navegacion label {
+    margin: 10px 15px;
+    border-radius: 40px;
+    border: none;
+    background-color: transparent;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url(../../../public/img/menu.png);
+  }
+
+  .navegacion label:active {
+    background-image: url(../../../public/img/menu2.png);
+  }
 }

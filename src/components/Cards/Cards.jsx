@@ -1,6 +1,7 @@
 import Card from "../Card/Card";
 import styled from "styled-components";
 import { useState } from "react";
+import "./Cards.css";
 
 const Cartas = styled.div`
   display: flex;
@@ -8,19 +9,18 @@ const Cartas = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 25px;
+  padding-bottom: 20px;
 `;
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 `;
 const Buttons = styled.button`
   height: 45px;
   width: 40px;
   border-radius: 30px;
   border: none;
-  position: relative;
-  top: 160px;
   background-color: transparent;
   color: #03d361;
   font-size: 35px;
@@ -50,8 +50,12 @@ export default function Cards(props) {
 
   return (
     <Container>
-      {characters.length > 4 && <Buttons onClick={prevHandler}>◀</Buttons>}
-      <Cartas>
+      {characters.length > 4 && (
+        <Buttons id="buttonIzquierda" onClick={prevHandler}>
+          ◀
+        </Buttons>
+      )}
+      <Cartas className="cartas">
         {personajes.map((objeto) => {
           return (
             <Card
@@ -66,7 +70,11 @@ export default function Cards(props) {
           );
         })}
       </Cartas>
-      {characters.length > 4 && <Buttons onClick={nextHandler}>▶</Buttons>}
+      {characters.length > 4 && (
+        <Buttons id="buttonDerecha" onClick={nextHandler}>
+          ▶
+        </Buttons>
+      )}
     </Container>
   );
 }

@@ -1,0 +1,23 @@
+#buttonIzquierda {
+  position: fixed;
+  top: 28rem;
+  left: 2rem;
+}
+
+#buttonDerecha {
+  position: fixed;
+  top: 28rem;
+  right: 2rem;
+}
+
+@media (min-width: 1050px) and (max-width: 1570px) {
+  .cartas {
+    max-width: 65rem;
+  }
+}
+
+@media (min-width: 690px) and (max-width: 1040px) {
+  .cartas {
+    max-width: 35rem;
+  }
+}
