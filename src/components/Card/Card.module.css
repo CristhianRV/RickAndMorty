@@ -24,11 +24,11 @@
 }
 
 .boton {
-  position: absolute;
+  /* position: absolute; */
   width: 25px;
   height: 25px;
-  top: 5px;
-  right: 5px;
+  /* top: 5px;
+  right: 5px; */
   background-color: rgb(171, 17, 122);
   color: aliceblue;
   outline: 1px solid black;
@@ -67,7 +67,23 @@
   margin: 0;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 350px) {
+  .carta {
+    width: 10rem;
+  }
+  .name {
+    left: 0px;
+  }
+  .descripsion h2 {
+    font-size: 22px;
+  }
+  .image {
+    width: 9rem;
+    height: 9rem;
+  }
+}
+
+@media (min-width: 350px) and (max-width: 380px) {
   .carta {
     width: 13rem;
   }

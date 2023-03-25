@@ -124,7 +124,7 @@
     height: 25vh;
     top: 55px;
     right: -100vw;
-    width: 17rem;
+    width: 20rem;
     border-radius: 10px;
     padding-top: 2rem;
     justify-content: flex-start;
@@ -139,11 +139,11 @@
   }
 
   .inputSearchBar:hover {
-    width: 135px;
+    width: 11rem;
   }
 
   .inputSearchBar:focus {
-    width: 135px !important;
+    width: 11rem;
   }
   .navegacion input[type="checkbox"] {
     position: absolute;
