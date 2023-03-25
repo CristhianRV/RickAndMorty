@@ -8,6 +8,9 @@ const Card = (props) => {
 
   return (
     <div className={styles.carta}>
+      <button className={styles.boton} onClick={finalizar}>
+        X
+      </button>
       <div className={styles.contenedor}>
         <Link to={`/home/detail/${props.ident}`}>
           <img
@@ -16,9 +19,7 @@ const Card = (props) => {
             alt={`imagen de ${props.name}`}
           />
         </Link>
-        <button className={styles.boton} onClick={finalizar}>
-          X
-        </button>
+
         <h2 className={styles.name}>{props.name}</h2>
       </div>
 

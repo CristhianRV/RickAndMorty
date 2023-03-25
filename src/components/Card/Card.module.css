@@ -1,6 +1,9 @@
 .carta {
-  background-color: rgba(31, 209, 225, 0.32);
+  position: relative;
+  display: flex;
   width: fit-content;
+  flex-direction: column;
+  background-color: rgba(31, 209, 225, 0.32);
   border-radius: 15px;
   border: 1px solid rgb(59, 14, 174);
   transition: 0.4s;
@@ -17,18 +20,20 @@
 }
 
 .image {
-  display: relative;
   border-radius: 60rem;
 }
 
 .boton {
   position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 5px;
   right: 5px;
   background-color: rgb(171, 17, 122);
   color: aliceblue;
   outline: 1px solid black;
   outline-offset: 0.5px;
-  border-radius: 18px;
+  border-radius: 5rem;
   cursor: pointer;
   border: none;
 }
