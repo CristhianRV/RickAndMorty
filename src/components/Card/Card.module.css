@@ -30,6 +30,7 @@
   outline-offset: 0.5px;
   border-radius: 18px;
   cursor: pointer;
+  border: none;
 }
 
 .name {
@@ -61,7 +62,7 @@
   margin: 0;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
   .carta {
     width: 13rem;
   }
@@ -69,11 +70,25 @@
     width: 11rem;
     height: 11rem;
   }
+
+  .name {
+    font-size: 18px;
+    left: 0px;
+  }
+  .descripsion h2 {
+    font-size: 22px;
+  }
 }
 
-@media (min-width: 361px) and (max-width: 400px) {
+@media (min-width: 381px) and (max-width: 400px) {
   .carta {
     width: 15rem;
+  }
+  .name {
+    left: 0px;
+  }
+  .descripsion h2 {
+    font-size: 22px;
   }
   .image {
     width: 12rem;
@@ -84,6 +99,9 @@
 @media (min-width: 401px) and (max-width: 500px) {
   .carta {
     width: 16rem;
+  }
+  .name {
+    left: 0px;
   }
   .image {
     width: 13rem;
