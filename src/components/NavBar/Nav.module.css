@@ -79,6 +79,7 @@
   width: 0px;
   background-repeat: no-repeat;
   transition: 0.4s;
+  font-size: 16px;
 }
 .inputSearchBar:hover {
   outline: none;
