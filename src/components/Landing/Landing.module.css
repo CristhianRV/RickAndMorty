@@ -32,6 +32,12 @@
   }
 }
 
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .loggin input:focus {
+    font-size: 16px;
+  }
+}
+
 .loggin {
   display: flex;
   flex-direction: column;
